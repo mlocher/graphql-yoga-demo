@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "graphql": "^16.6.0",
+    "graphql-yoga": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
