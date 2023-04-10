@@ -17,7 +17,7 @@ export const schema = createSchema({
       },
     },
     Mutation: {
-      echo: (parent, _args, context) => {
+      echo: (_, _args, context) => {
         console.log(context.request.headers);
         console.log(_args["message"]);
         return _args["message"];
