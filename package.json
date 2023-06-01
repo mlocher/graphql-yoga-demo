@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "@graphql-yoga/plugin-defer-stream": "^1.9.1",
     "graphql": "^16.6.0",
     "graphql-yoga": "^3.0.0"
   },
