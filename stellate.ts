@@ -11,7 +11,15 @@ const config: Config = {
         }],
         injectHeaders: true,
         scopes: {
-            AUTHENTICATED_SELF_ONLY: "header:Authorization"
+            AUTHENTICATED_SELF_ONLY: "header:Authorization",
+            AUTHENTICATED_JWT: {
+                definition: "header:Authorization",
+                jwt: {
+                    claim: 'sub',
+                    algorithm: 'HS256',
+                    secret: 'secret'
+                }
+            }
         },
 
         rootTypeNames: {
@@ -24,7 +32,7 @@ const config: Config = {
                 },
                 maxAge: 900,
                 swr: 900,
-                scope: 'AUTHENTICATED_SELF_ONLY',
+                scope: 'AUTHENTICATED_JWT',
                 description: 'Cache current user and agency'
             }
         ],

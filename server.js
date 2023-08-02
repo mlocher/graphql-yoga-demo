@@ -1,7 +1,12 @@
+import 'dotenv/config'
+
 import { createServer } from "node:http";
 import { createYoga } from "graphql-yoga";
 import { useDeferStream } from '@graphql-yoga/plugin-defer-stream'
+import { useJWT } from '@graphql-yoga/plugin-jwt'
 import { schema } from "./schema.js";
+
+const signingKey = process.env.JWT_SECRET;
 
 // Create a Yoga instance with a GraphQL schema.
 const yoga = createYoga({
@@ -12,7 +17,14 @@ const yoga = createYoga({
     allowedHeaders: ['X-Custom-Header'],
     methods: ['POST']
   },
-  plugins: [useDeferStream()]
+  plugins: [
+    useDeferStream(),
+    useJWT({
+      issuer: 'http://demo.stellate.co',
+      signingKey,
+      algorithms: ['HS256'],
+    })
+  ]
 });
 
 // Pass it into a server to hook into request handlers.
