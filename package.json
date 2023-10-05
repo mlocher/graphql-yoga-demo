@@ -1,12 +1,12 @@
 {
   "type": "module",
   "dependencies": {
-    "@graphql-yoga/plugin-defer-stream": "^1.9.1",
-    "@graphql-yoga/plugin-jwt": "^1.0.0",
+    "@graphql-yoga/plugin-defer-stream": "^2.0.5",
+    "@graphql-yoga/plugin-jwt": "^1.1.0",
     "dotenv": "^16.3.1",
-    "graphql": "^16.6.0",
-    "graphql-yoga": "^3.0.0",
-    "jsonwebtoken": "^9.0.1"
+    "graphql": "^16.8.1",
+    "graphql-yoga": "^4.0.5",
+    "jsonwebtoken": "^9.0.2"
   },
   "scripts": {
     "start": "node server.js"
